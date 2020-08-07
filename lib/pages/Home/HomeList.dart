@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:andreyflutterteste/pages/Home.dart';
-import 'package:andreyflutterteste/pages/Login.dart';
-import 'package:andreyflutterteste/pages/Register.dart';
+import 'package:andreyflutterteste/pages/Home/Home1.dart';
+import 'package:andreyflutterteste/pages/Home/Home2.dart';
+import 'package:andreyflutterteste/pages/Home/Home3.dart';
 import 'package:provider/provider.dart';
-import 'package:andreyflutterteste/routes/pageManager.dart';
-import 'package:andreyflutterteste/routes/stateManager.dart';
+import 'package:andreyflutterteste/states/pageManager.dart';
 import 'package:andreyflutterteste/components/customDrawer/customDrawer.dart';
-import 'package:andreyflutterteste/components/Titulo.dart';
+import 'package:andreyflutterteste/components/TextoDinamico/Titulo.dart';
 
-class Routes extends StatelessWidget {
+class HomeList extends StatelessWidget {
   final PageController pageController = PageController();
-  final int teste = 30;
   @override
   Widget build(BuildContext context) {
-    final teste = context.watch<StateManager>().x;
     return ChangeNotifierProvider(
-        create: (_) => PageManager(pageController, teste),
+        create: (_) => PageManager(pageController),
         child: Scaffold(
           drawer: CustomDrawer(),
           appBar: AppBar(
@@ -25,9 +22,9 @@ class Routes extends StatelessWidget {
             controller: pageController,
             physics: const NeverScrollableScrollPhysics(),
             children: <Widget>[
-              Home(),
-              Login(),
-              Register(),
+              Home1(),
+              Home2(),
+              Home3(),
             ],
           ),
         ));

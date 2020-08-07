@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:andreyflutterteste/routes/pageManager.dart';
+import 'package:andreyflutterteste/states/pageManager.dart';
 import 'package:provider/provider.dart';
 
 class Titulo extends StatelessWidget {
@@ -8,7 +8,7 @@ class Titulo extends StatelessWidget {
     final int currentPage = context.watch<PageManager>().currentPage;
     String texto() {
       String text;
-      print(currentPage);
+      debugPrint('Página ${currentPage + 1}');
       if (currentPage == 0) {
         text = 'Página 1';
       } else if (currentPage == 1) {

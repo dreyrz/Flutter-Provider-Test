@@ -7,10 +7,10 @@ class CustomDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          DrawerChild(icon: Icons.home, text: 'Início', page: 0),
-          DrawerChild(icon: Icons.list, text: 'Produtos', page: 1),
+          DrawerChild(icon: Icons.home, text: 'Página 1', page: 0),
+          DrawerChild(icon: Icons.list, text: 'Página 2', page: 1),
           DrawerChild(
-              icon: Icons.playlist_add_check, text: 'Meus pedidos', page: 2),
+              icon: Icons.playlist_add_check, text: 'Página 3', page: 2),
         ],
       ),
     );

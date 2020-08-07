@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:andreyflutterteste/components/TextoTeste/Texto.dart';
+import 'package:andreyflutterteste/components/TextoDinamico/Texto.dart';
 import 'package:provider/provider.dart';
-import 'package:andreyflutterteste/routes/pageManager.dart';
+import 'package:andreyflutterteste/states/stateManager.dart';
 
 class Register extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class Register extends StatelessWidget {
           children: <Widget>[
             Texto(),
             FloatingActionButton(
-              onPressed: () => context.read<PageManager>().increment(),
+              onPressed: () => context.read<StateManager>().increment(),
               child: Icon(Icons.add),
             )
           ],
