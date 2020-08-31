@@ -5,12 +5,13 @@ import 'package:provider/provider.dart';
 class Texto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final contador = context.watch<StateManager>().contador;
-    return Center(
-        child: Text(contador.toString(),
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 30)));
+    return Consumer<StateManager>(builder: (_, stateManager, ___) {
+      return Center(
+          child: Text(stateManager.contador.toString(),
+              style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30)));
+    });
   }
 }
