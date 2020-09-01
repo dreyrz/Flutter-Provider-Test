@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:andreyflutterteste/states/pageManager.dart';
 import 'package:andreyflutterteste/components/customDrawer/customDrawer.dart';
 import 'package:andreyflutterteste/components/TextoDinamico/Titulo.dart';
+import 'package:andreyflutterteste/pages/Table.dart';
 
 class HomeList extends StatelessWidget {
   final PageController pageController = PageController();
@@ -21,11 +22,7 @@ class HomeList extends StatelessWidget {
           body: PageView(
             controller: pageController,
             physics: const NeverScrollableScrollPhysics(),
-            children: <Widget>[
-              Home1(),
-              Home2(),
-              Home3(),
-            ],
+            children: <Widget>[Home1(), Home2(), Home3(), TableWidget()],
           ),
         ));
   }

@@ -9,7 +9,7 @@ class Texto extends StatelessWidget {
       return Center(
           child: Text(stateManager.contador.toString(),
               style: TextStyle(
-                  color: Colors.red,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 30)));
     });

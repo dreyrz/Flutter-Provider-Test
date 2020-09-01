@@ -11,10 +11,15 @@ class Titulo extends StatelessWidget {
       debugPrint('Página ${currentPage + 1}');
       if (currentPage == 0) {
         text = 'Página 1';
-      } else if (currentPage == 1) {
+      }
+      if (currentPage == 1) {
         text = 'Página 2';
-      } else if (currentPage == 2) {
+      }
+      if (currentPage == 2) {
         text = 'Página 3';
+      }
+      if (currentPage == 3) {
+        text = 'Tabela';
       }
       return text;
     }

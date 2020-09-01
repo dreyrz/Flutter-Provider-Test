@@ -11,6 +11,7 @@ class CustomDrawer extends StatelessWidget {
           DrawerChild(icon: Icons.list, text: 'Página 2', page: 1),
           DrawerChild(
               icon: Icons.playlist_add_check, text: 'Página 3', page: 2),
+          DrawerChild(icon: Icons.apps, text: 'Página 4', page: 3),
         ],
       ),
     );
