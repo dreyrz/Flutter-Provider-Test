@@ -3,58 +3,106 @@ import 'package:flutter/material.dart';
 class TableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return InteractiveViewer(
-        constrained: false,
-        child: Container(
-          color: Colors.red,
-          width: 600,
-          child: Table(
-            defaultColumnWidth: FixedColumnWidth(10),
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            columnWidths: {
-              0: FractionColumnWidth(0.2),
-            },
-            border: TableBorder(
-              horizontalInside: BorderSide(
-                color: Colors.black,
-                style: BorderStyle.solid,
-                width: 1.0,
-              ),
-              verticalInside: BorderSide(
-                color: Colors.black,
-                style: BorderStyle.solid,
-                width: 1.0,
+    return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: DataTable(
+          columns: const <DataColumn>[
+            DataColumn(
+              label: Text(
+                'Data',
+                style: TextStyle(fontStyle: FontStyle.italic),
               ),
             ),
-            children: [
-              _criarLinhaTable(
-                  "Data,13/08,14/08,15/08,16/08,17/08,18/08,19/08,20/08"),
-              _criarLinhaTable("Jejum (em ml),13,16,1230,2,18,293,304,120"),
-              _criarLinhaTable(
-                  "2h após café da manhã,13,16,1230,2,18,293,304,120"),
-              _criarLinhaTable("Antes do almoço ,13,16,1230,2,18,293,304,120"),
-              _criarLinhaTable("2h após almoço, 13,16,1230,2,18,293,304,120"),
-              _criarLinhaTable("Antes do jantar ,13,16,1230,2,18,293,304,120"),
-              _criarLinhaTable("2h após jantar,13,16,1230,2,18,293,304,120"),
-              _criarLinhaTable("Ao deitar,13,16,1230,2,18,293,304,120"),
-              _criarLinhaTable("Madrugada,13,16,1230,2,18,293,304,120"),
-            ],
-          ),
+            DataColumn(
+              label: Text(
+                'Jejum',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                '2h após café da manhã',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                'Antes do almoço',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                '2h após almoço',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                'Antes do jantar',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                '2h após jantar',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                'Ao deitar',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                'Madrugada',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+            ),
+          ],
+          rows: const <DataRow>[
+            DataRow(
+              cells: <DataCell>[
+                DataCell(Text('Sarah')),
+                DataCell(Text('19')),
+                DataCell(Text('Student')),
+                DataCell(Text('Sarah')),
+                DataCell(Text('19')),
+                DataCell(Text('Student')),
+                DataCell(Text('Sarah')),
+                DataCell(Text('19')),
+                DataCell(Text('Student')),
+              ],
+            ),
+            DataRow(
+              cells: <DataCell>[
+                DataCell(Text('Janine')),
+                DataCell(Text('43')),
+                DataCell(Text('Professor')),
+                DataCell(Text('Janine')),
+                DataCell(Text('43')),
+                DataCell(Text('Professor')),
+                DataCell(Text('Janine')),
+                DataCell(Text('43')),
+                DataCell(Text('Professor')),
+              ],
+            ),
+            DataRow(
+              cells: <DataCell>[
+                DataCell(Text('William')),
+                DataCell(Text('27')),
+                DataCell(Text('Associate Professor')),
+                DataCell(Text('William')),
+                DataCell(Text('27')),
+                DataCell(Text('Associate Professor')),
+                DataCell(Text('William')),
+                DataCell(Text('27')),
+                DataCell(Text('Associate Professor')),
+              ],
+            ),
+          ],
         ));
-  }
-
-  _criarLinhaTable(String listaNomes) {
-    return TableRow(
-      children: listaNomes.split(',').map((name) {
-        return Container(
-          alignment: Alignment.center,
-          child: Text(
-            name,
-            style: TextStyle(fontSize: 20.0),
-          ),
-          padding: EdgeInsets.all(8.0),
-        );
-      }).toList(),
-    );
   }
 }
